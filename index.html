@@ -3,53 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <title>Starlink Ltd - High-Speed Internet Packages</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .package-container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .package-btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            margin: 10px 0;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        .package-btn.red {
-            background-color: #e74c3c;
-        }
-        .package-btn.blue {
-            background-color: #3498db;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="package-container">
-        <h1>Starlink Ltd</h1>
-        <h2>High-Speed Internet Packages</h2>
+    <div class="container">
+        <header class="header">
+            <h1>Starlink Ltd</h1>
+            <h2>High-Speed Internet Packages</h2>
+        </header>
 
-        <a href="payment.html?package=24hours&price=79&data=7GB" class="package-btn red">24 Hours<br>7GB (Ksh 79)</a>
-        <a href="payment.html?package=7days&price=89&data=12GB" class="package-btn blue">7 Days<br>12GB (Ksh 89)</a>
-        <a href="payment.html?package=14days&price=110&data=22GB" class="package-btn red">14 Days<br>22GB (Ksh 110)</a>
-        <a href="payment.html?package=21days&price=130&data=35GB" class="package-btn blue">21 Days<br>35GB (Ksh 130)</a>
-        <a href="payment.html?package=30days&price=159&data=50GB" class="package-btn red">30 Days<br>50GB (Ksh 159)</a>
-        <a href="payment.html?package=2months&price=220&data=Unlimited" class="package-btn blue">2 Months<br>Unlimited (Ksh 220)</a>
+        <div class="packages-grid">
+            <!-- 24 Hours Package -->
+            <a href="payment.html?package=24hours&price=79&data=7GB" class="package-card">
+                <div class="package-name">24 Hours</div>
+                <div class="package-data">7GB</div>
+                <div class="package-price">Ksh 79</div>
+            </a>
+
+            <!-- 7 Days Package -->
+            <a href="payment.html?package=7days&price=89&data=12GB" class="package-card">
+                <div class="package-name">7 Days</div>
+                <div class="package-data">12GB</div>
+                <div class="package-price">Ksh 89</div>
+            </a>
+
+            <!-- 14 Days Package -->
+            <a href="payment.html?package=14days&price=110&data=22GB" class="package-card">
+                <div class="package-name">14 Days</div>
+                <div class="package-data">22GB</div>
+                <div class="package-price">Ksh 110</div>
+            </a>
+
+            <!-- 21 Days Package -->
+            <a href="payment.html?package=21days&price=130&data=35GB" class="package-card">
+                <div class="package-name">21 Days</div>
+                <div class="package-data">35GB</div>
+                <div class="package-price">Ksh 130</div>
+            </a>
+
+            <!-- 30 Days Package -->
+            <a href="payment.html?package=30days&price=159&data=50GB" class="package-card">
+                <div class="package-name">30 Days</div>
+                <div class="package-data">50GB</div>
+                <div class="package-price">Ksh 159</div>
+            </a>
+
+            <!-- 2 Months Package -->
+            <a href="payment.html?package=2months&price=220&data=Unlimited" class="package-card">
+                <div class="package-name">2 Months</div>
+                <div class="package-data">Unlimited</div>
+                <div class="package-price">Ksh 220</div>
+            </a>
+        </div>
+
+        <footer class="footer">
+            <p>Premium Support Available 24/7</p>
+            <p><a href="mailto:starlinkhelp.com">starlinkhelp.com</a></p>
+        </footer>
     </div>
 </body>
 </html>

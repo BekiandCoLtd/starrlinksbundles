@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Instructions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .payment-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .package-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .package-details {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .instructions {
+            background-color: #e8f4fd;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .instructions ol {
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .till-number {
+            font-weight: bold;
+            color: #333;
+        }
+        .copy-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        .confirmation-note {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="package-title">You've selected our premium package:</div>
+        <div class="package-details" id="packageDetails">21 Days - 35GB (Ksh 130)</div>
+
+        <div class="instructions">
+            <p><strong>Please follow these M-Pesa payment instructions:</strong></p>
+            <ol>
+                <li>Go to M-Pesa on your phone</li>
+                <li>Select Lipa na M-Pesa</li>
+                <li>Select Buy Goods</li>
+                <li>Enter Till Number: <span class="till-number">5622370</span> <button class="copy-btn" onclick="copyTillNumber()">Copy</button></li>
+                <li>Enter the amount shown for your package</li>
+                <li>Enter your M-Pesa PIN and confirm <strong>GADGETCOM VENTURES</strong></li>
+            </ol>
+        </div>
+
+        <div class="confirmation-note">
+            Your package will be activated automatically after payment.
+        </div>
+    </div>
+
+    <script>
+        // Extract package details from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const packageName = urlParams.get('package');
+        const packagePrice = urlParams.get('price');
+        const packageData = urlParams.get('data');
+
+        // Display package details
+        if (packageName && packagePrice && packageData) {
+            document.getElementById('packageDetails').textContent =
+                `${formatPackageName(packageName)} - ${packageData} (Ksh ${packagePrice})`;
+        }
+
+        // Format package name for display
+        function formatPackageName(name) {
+            return name.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+        }
+
+        // Copy Till Number to clipboard
+        function copyTillNumber() {
+            const tillNumber = document.querySelector('.till-number').textContent;
+            navigator.clipboard.writeText(tillNumber).then(() => {
+                alert('Till Number copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

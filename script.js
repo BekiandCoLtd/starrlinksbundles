@@ -1,35 +1,34 @@
-const activityText = document.getElementById("activityText");
-const progressBar = document.getElementById("progressBar");
+const cards = document.querySelectorAll(".card");
+const ctaBtn = document.getElementById("ctaBtn");
+let selectedPackage = null;
 
-const packages = ["5GB","10GB","12.5GB","21GB","50GB"];
+cards.forEach(card => {
+    card.addEventListener("click", () => {
 
-function randomPhone(){
-    return "07" + Math.floor(100000 + Math.random()*900000)
-        .toString().slice(0,3) + "****" + Math.floor(10+Math.random()*90);
-}
+        // Remove previous selection
+        cards.forEach(c => c.classList.remove("selected"));
 
-function updateTicker(){
-    const phone = randomPhone();
-    const pkg = packages[Math.floor(Math.random()*packages.length)];
-    activityText.innerHTML = `${phone} activated <strong>${pkg}</strong> bundle`;
-    progressBar.style.width="0%";
-    setTimeout(()=>progressBar.style.width="100%",50);
-}
+        // Select current
+        card.classList.add("selected");
 
-if(activityText){
-    updateTicker();
-    setInterval(updateTicker,3000);
-}
+        selectedPackage = {
+            size: card.dataset.size,
+            price: card.dataset.price,
+            duration: card.dataset.duration
+        };
 
-function selectPkg(size,price,duration){
-    localStorage.setItem("pkg",`${size} - ${price} (${duration})`);
-}
+        // Update button text dynamically
+        ctaBtn.textContent = `⚡ Get ${selectedPackage.size} (${selectedPackage.duration}) NOW`;
+        ctaBtn.classList.remove("disabled");
+    });
+});
 
-function proceed(){
-    window.location="payment.html";
-}
+ctaBtn.addEventListener("click", () => {
+    if (!selectedPackage) return;
 
-if(document.getElementById("pkgTitle")){
-    document.getElementById("pkgTitle").innerText=
-        localStorage.getItem("pkg");
-}
+    localStorage.setItem("pkg", 
+        `${selectedPackage.size} - Ksh ${selectedPackage.price} (${selectedPackage.duration})`
+    );
+
+    window.location.href = "payment.html";
+});

@@ -3,78 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Starlink Direct to Cell</title>
+<title>DirectCell Pro</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-    <h1 class="title">
-        <span class="blue">Starlink</span>
-        <span class="green">Direct to Cell</span>
+    <h1 class="brand">
+        <span class="blue">Direct</span>
+        <span class="green">Cell Pro</span>
     </h1>
 
-    <p class="subtitle">Secure coverage • wide coverage • Direct to cell</p>
+    <p class="tagline">Secure coverage • Wide coverage • Direct to device</p>
 
-    <div class="alert-box">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        Choose your desired package and complete the payment to get instant data.
+    <div class="notice">
+        ⚠ Choose your desired package and complete payment to activate instantly.
     </div>
 
-    <div class="recent">
-        <h3>Recents</h3>
-        <div id="recentUpdate" class="recent-box"></div>
+    <div class="activity-wrapper">
+        <div class="activity-label">Recent Activity (Sample Data)</div>
+        <div class="activity-card">
+            <div class="pulse"></div>
+            <div id="activityText"></div>
+        </div>
+        <div class="progress">
+            <div id="progressBar"></div>
+        </div>
     </div>
 
-    <div class="section-title">
-        <i class="fa-solid fa-briefcase"></i> Select Your Package
-    </div>
+    <div class="section-title">Select Your Package</div>
 
     <div class="grid">
-
-        <!-- Package Card -->
-        <div class="card" onclick="selectPackage('5GB','Ksh 49','24 hrs')">
+        <div class="card" onclick="selectPkg('5GB','Ksh 49','24 hrs')">
             <h2>5GB</h2>
-            <p>Fee: Ksh 49 • 24 hrs</p>
+            <span>Ksh 49 • 24 hrs</span>
         </div>
 
-        <div class="card" onclick="selectPackage('7.5GB','Ksh 80','24 hrs')">
-            <h2>7.5GB</h2>
-            <p>Fee: Ksh 80 • 24 hrs</p>
-        </div>
-
-        <div class="card" onclick="selectPackage('10GB','Ksh 120','48 hrs')">
-            <h2>10GB</h2>
-            <p>Fee: Ksh 120 • 48 hrs</p>
-        </div>
-
-        <div class="card highlight" onclick="selectPackage('12.5GB','Ksh 140','48 hrs')">
+        <div class="card featured" onclick="selectPkg('12.5GB','Ksh 140','48 hrs')">
             <h2>12.5GB</h2>
-            <p>Fee: Ksh 140 • 48 hrs</p>
+            <span>Ksh 140 • 48 hrs</span>
         </div>
 
-        <div class="card" onclick="selectPackage('16GB','Ksh 180','7 days')">
-            <h2>16GB</h2>
-            <p>Fee: Ksh 180 • 7 days</p>
-        </div>
-
-        <div class="card" onclick="selectPackage('21GB','Ksh 200','7 days')">
+        <div class="card" onclick="selectPkg('21GB','Ksh 200','7 days')">
             <h2>21GB</h2>
-            <p>Fee: Ksh 200 • 7 days</p>
+            <span>Ksh 200 • 7 days</span>
         </div>
 
+        <div class="card" onclick="selectPkg('50GB','Ksh 960','30 days')">
+            <h2>50GB</h2>
+            <span>Ksh 960 • 30 days</span>
+        </div>
     </div>
 
-    <button class="cta" onclick="goSelected()">
-        ⚡ Get Selected Package NOW
-    </button>
+    <button class="cta" onclick="proceed()">Continue</button>
 
     <div class="badges">
-        <div><i class="fa-solid fa-lock"></i> Secure</div>
-        <div><i class="fa-solid fa-bolt"></i> Instant</div>
-        <div><i class="fa-solid fa-check"></i> Verified</div>
+        <div>🔒 Secure</div>
+        <div>⚡ Instant</div>
+        <div>✔ Verified</div>
     </div>
 
 </div>

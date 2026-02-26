@@ -1,47 +1,35 @@
-let selectedPackage = null;
+const activityText = document.getElementById("activityText");
+const progressBar = document.getElementById("progressBar");
 
-function selectPackage(size, price, duration) {
-    selectedPackage = { size, price, duration };
-    alert(size + " selected");
+const packages = ["5GB","10GB","12.5GB","21GB","50GB"];
+
+function randomPhone(){
+    return "07" + Math.floor(100000 + Math.random()*900000)
+        .toString().slice(0,3) + "****" + Math.floor(10+Math.random()*90);
 }
 
-function goSelected() {
-    if (!selectedPackage) {
-        alert("Please select a package first.");
-        return;
-    }
-    localStorage.setItem("package", JSON.stringify(selectedPackage));
-    window.location.href = "payment.html";
+function updateTicker(){
+    const phone = randomPhone();
+    const pkg = packages[Math.floor(Math.random()*packages.length)];
+    activityText.innerHTML = `${phone} activated <strong>${pkg}</strong> bundle`;
+    progressBar.style.width="0%";
+    setTimeout(()=>progressBar.style.width="100%",50);
 }
 
-if (document.getElementById("packageTitle")) {
-    const pkg = JSON.parse(localStorage.getItem("package"));
-    if (pkg) {
-        document.getElementById("packageTitle").innerText =
-            `You've selected: ${pkg.size} - ${pkg.price} (${pkg.duration})`;
-    }
+if(activityText){
+    updateTicker();
+    setInterval(updateTicker,3000);
 }
 
-function copyTill() {
-    navigator.clipboard.writeText("8879872");
-    alert("Till Number Copied!");
+function selectPkg(size,price,duration){
+    localStorage.setItem("pkg",`${size} - ${price} (${duration})`);
 }
 
-function randomPhone() {
-    let prefix = "07";
-    let mid = Math.floor(1000 + Math.random() * 9000);
-    let end = Math.floor(10 + Math.random() * 90);
-    return `${prefix}${mid}****${end}`;
+function proceed(){
+    window.location="payment.html";
 }
 
-function updateRecent() {
-    const gb = [5,7.5,10,12.5,16,21];
-    let randomGB = gb[Math.floor(Math.random() * gb.length)];
-    document.getElementById("recentUpdate").innerText =
-        `${randomPhone()} increased to ${randomGB}GB – just now`;
-}
-
-if (document.getElementById("recentUpdate")) {
-    updateRecent();
-    setInterval(updateRecent, 3000);
+if(document.getElementById("pkgTitle")){
+    document.getElementById("pkgTitle").innerText=
+        localStorage.getItem("pkg");
 }

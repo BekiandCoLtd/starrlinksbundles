@@ -5,46 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Payment Instructions</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="app">
 
-    <!-- Back -->
     <div class="top-bar">
         <a href="index.html" class="back-btn">←</a>
     </div>
 
-    <!-- Payment Card -->
     <div class="payment-card">
 
-        <h2 id="pkgTitle" class="pkg-title"></h2>
+        <div class="selected-info">
+            <p class="selected-text">
+                You've selected our premium package:
+            </p>
+
+            <h3 id="selectedPackageTitle"></h3>
+
+            <p class="instruction-text">
+                Please follow these M-Pesa payment instructions:
+            </p>
+        </div>
 
         <div class="divider"></div>
 
         <div class="steps">
 
-            <div class="step">
-                <span class="number">1</span>
-                <span>Go to <strong>M-Pesa</strong> on your phone</span>
-            </div>
-
-            <div class="step">
-                <span class="number">2</span>
-                <span>Select <strong>Lipa na M-Pesa</strong></span>
-            </div>
-
-            <div class="step">
-                <span class="number">3</span>
-                <span>Select <strong>Buy Goods</strong></span>
-            </div>
+            <div class="step"><span class="number">1</span>Go to <strong>M-Pesa</strong></div>
+            <div class="step"><span class="number">2</span>Select <strong>Lipa na M-Pesa</strong></div>
+            <div class="step"><span class="number">3</span>Select <strong>Buy Goods</strong></div>
 
             <div class="step">
                 <span class="number">4</span>
                 <div class="till-wrapper">
                     <span>Enter Till Number</span>
-
                     <div class="till-box">
                         <span id="tillNumber">8879872</span>
                         <button id="copyBtn">Copy</button>
@@ -52,15 +47,8 @@
                 </div>
             </div>
 
-            <div class="step">
-                <span class="number">5</span>
-                <span>Enter the exact package amount</span>
-            </div>
-
-            <div class="step">
-                <span class="number">6</span>
-                <span>Enter your M-Pesa PIN and confirm</span>
-            </div>
+            <div class="step"><span class="number">5</span>Enter exact package amount</div>
+            <div class="step"><span class="number">6</span>Enter your PIN and confirm</div>
 
         </div>
 

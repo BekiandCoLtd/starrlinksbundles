@@ -136,3 +136,40 @@ body{
     padding:20px;
     border-radius:18px;
 }
+.card {
+    background: white;
+    padding: 16px;
+    border-radius: 18px;
+    text-align: center;
+    border: 2px solid #e5e7eb;
+    transition: all .25s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.card.selected {
+    border: 2px solid #2563eb;
+    background: #f0f7ff;
+}
+
+.cta {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 15px;
+    color: white;
+    background: linear-gradient(90deg,#3b82f6,#2563eb);
+    transition: all .25s ease;
+}
+
+.cta.disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}

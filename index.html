@@ -1,198 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <title>Starlink Direct to Cell</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starlink Direct to Cell</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <h1 class="app-title">Starlink Direct to Cell</h1>
-            <p class="app-subtitle">Secure coverage • Wide coverage • Direct to cell</p>
-        </header>
 
-        <!-- Notification Banner -->
-        <div class="notification-banner">
-            <i class="fas fa-exclamation-triangle"></i>
-            <span>Choose your desired package and complete the payment to get instant data.</span>
-        </div>
+<div class="container">
 
-        <!-- Recents Section -->
-        <div class="recents-section">
-            <h3 class="recents-header">Recents</h3>
-            <div class="recents-list" id="recentsList">
-                <!-- Recents will be dynamically inserted here -->
-            </div>
-        </div>
+    <h1 class="title">
+        <span class="blue">Starlink</span>
+        <span class="green">Direct to Cell</span>
+    </h1>
 
-        <!-- Select Package Section -->
-        <div class="select-package-section">
-            <div class="section-header">
-                <i class="fas fa-box-open"></i>
-                <span>Select Your Package</span>
-            </div>
+    <p class="subtitle">Secure coverage • wide coverage • Direct to cell</p>
 
-            <!-- Packages Grid -->
-            <div class="packages-grid">
-                <!-- 5GB Package -->
-                <a href="payment.html?package=5GB&price=49&data=5GB&duration=24 hrs" class="package-card">
-                    <div class="package-name">5GB</div>
-                    <div class="package-details">Fee: Ksh 49 • 24 hrs</div>
-                </a>
-
-                <!-- 7.5GB Package -->
-                <a href="payment.html?package=7.5GB&price=80&data=7.5GB&duration=24 hrs" class="package-card">
-                    <div class="package-name">7.5GB</div>
-                    <div class="package-details">Fee: Ksh 80 • 24 hrs</div>
-                </a>
-
-                <!-- 10GB Package -->
-                <a href="payment.html?package=10GB&price=120&data=10GB&duration=48 hrs" class="package-card">
-                    <div class="package-name">10GB</div>
-                    <div class="package-details">Fee: Ksh 120 • 48 hrs</div>
-                </a>
-
-                <!-- 12.5GB Package -->
-                <a href="payment.html?package=12.5GB&price=140&data=12.5GB&duration=48 hrs" class="package-card">
-                    <div class="package-name">12.5GB</div>
-                    <div class="package-details">Fee: Ksh 140 • 48 hrs</div>
-                </a>
-
-                <!-- 16GB Package -->
-                <a href="payment.html?package=16GB&price=180&data=16GB&duration=7 days" class="package-card">
-                    <div class="package-name">16GB</div>
-                    <div class="package-details">Fee: Ksh 180 • 7 days</div>
-                </a>
-
-                <!-- 21GB Package -->
-                <a href="payment.html?package=21GB&price=200&data=21GB&duration=7 days" class="package-card">
-                    <div class="package-name">21GB</div>
-                    <div class="package-details">Fee: Ksh 200 • 7 days</div>
-                </a>
-
-                <!-- 25.5GB Package -->
-                <a href="payment.html?package=25.5GB&price=220&data=25.5GB&duration=7 days" class="package-card">
-                    <div class="package-name">25.5GB</div>
-                    <div class="package-details">Fee: Ksh 220 • 7 days</div>
-                </a>
-
-                <!-- 30GB Package -->
-                <a href="payment.html?package=30GB&price=350&data=30GB&duration=7 days" class="package-card">
-                    <div class="package-name">30GB</div>
-                    <div class="package-details">Fee: Ksh 350 • 7 days</div>
-                </a>
-
-                <!-- 35GB Package -->
-                <a href="payment.html?package=35GB&price=420&data=35GB&duration=14 days" class="package-card">
-                    <div class="package-name">35GB</div>
-                    <div class="package-details">Fee: Ksh 420 • 14 days</div>
-                </a>
-
-                <!-- 40GB Package -->
-                <a href="payment.html?package=40GB&price=540&data=40GB&duration=14 days" class="package-card">
-                    <div class="package-name">40GB</div>
-                    <div class="package-details">Fee: Ksh 540 • 14 days</div>
-                </a>
-
-                <!-- 45GB Package -->
-                <a href="payment.html?package=45GB&price=680&data=45GB&duration=30 days" class="package-card">
-                    <div class="package-name">45GB</div>
-                    <div class="package-details">Fee: Ksh 680 • 30 days</div>
-                </a>
-
-                <!-- 50GB Package -->
-                <a href="payment.html?package=50GB&price=960&data=50GB&duration=30 days" class="package-card">
-                    <div class="package-name">50GB</div>
-                    <div class="package-details">Fee: Ksh 960 • 30 days</div>
-                </a>
-
-                <!-- 60GB Package -->
-                <a href="payment.html?package=60GB&price=1550&data=60GB&duration=30 days" class="package-card">
-                    <div class="package-name">60GB</div>
-                    <div class="package-details">Fee: Ksh 1550 • 30 days</div>
-                </a>
-
-                <!-- 70GB Package -->
-                <a href="payment.html?package=70GB&price=2000&data=70GB&duration=30 days" class="package-card">
-                    <div class="package-name">70GB</div>
-                    <div class="package-details">Fee: Ksh 2000 • 30 days</div>
-                </a>
-            </div>
-        </div>
-
-        <!-- CTA Button -->
-        <div class="cta-button">
-            <a id="proceedButton" href="payment.html?package=12.5GB&price=140&data=12.5GB&duration=48 hrs" class="cta-btn">
-                <i class="fas fa-bolt"></i>
-                <span id="proceedButtonText">Get 12.5GB (48 hrs) NOW</span>
-            </a>
-        </div>
-
-        <!-- Footer -->
-        <footer class="app-footer">
-            <div class="footer-item">
-                <i class="fas fa-lock"></i>
-                <span>Secure</span>
-            </div>
-            <div class="footer-item">
-                <i class="fas fa-bolt"></i>
-                <span>Instant</span>
-            </div>
-            <div class="footer-item">
-                <i class="fas fa-check-circle"></i>
-                <span>Verified</span>
-            </div>
-        </footer>
+    <div class="alert-box">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        Choose your desired package and complete the payment to get instant data.
     </div>
 
-    <script>
-        // Generate random phone numbers for Recents section
-        function generateRandomPhoneNumbers() {
-            const phoneNumbers = [];
-            for (let i = 0; i < 7; i++) {
-                const randomNumber = `07${Math.floor(10000000 + Math.random() * 90000000)}`;
-                phoneNumbers.push(randomNumber);
-            }
-            return phoneNumbers;
-        }
+    <div class="recent">
+        <h3>Recents</h3>
+        <div id="recentUpdate" class="recent-box"></div>
+    </div>
 
-        // Display Recents after 3 seconds
-        setTimeout(() => {
-            const phoneNumbers = generateRandomPhoneNumbers();
-            const recentsList = document.getElementById('recentsList');
-            phoneNumbers.forEach(number => {
-                const maskedNumber = `${number.substring(0, 4)}****${number.substring(8, 10)}`;
-                const randomData = `${Math.floor(Math.random() * 50) + 5}GB`;
-                const recentsItem = document.createElement('div');
-                recentsItem.className = 'recents-item';
-                recentsItem.innerHTML = `
-                    <div class="recents-text">${maskedNumber} increased to ${randomData} — just now</div>
-                    <div class="recents-progress">
-                        <div class="progress-bar" style="width: ${Math.floor(Math.random() * 70) + 30}%"></div>
-                    </div>
-                `;
-                recentsList.appendChild(recentsItem);
-            });
-        }, 3000);
+    <div class="section-title">
+        <i class="fa-solid fa-briefcase"></i> Select Your Package
+    </div>
 
-        // Update Proceed Button based on selected package
-        const packageCards = document.querySelectorAll('.package-card');
-        packageCards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                e.preventDefault();
-                const packageData = card.querySelector('.package-name').textContent;
-                const packageDetails = card.querySelector('.package-details').textContent;
-                const href = card.getAttribute('href');
-                document.getElementById('proceedButton').setAttribute('href', href);
-                document.getElementById('proceedButtonText').textContent = `Get ${packageData} (${packageDetails.split('•')[1].trim()}) NOW`;
-            });
-        });
-    </script>
+    <div class="grid">
+
+        <!-- Package Card -->
+        <div class="card" onclick="selectPackage('5GB','Ksh 49','24 hrs')">
+            <h2>5GB</h2>
+            <p>Fee: Ksh 49 • 24 hrs</p>
+        </div>
+
+        <div class="card" onclick="selectPackage('7.5GB','Ksh 80','24 hrs')">
+            <h2>7.5GB</h2>
+            <p>Fee: Ksh 80 • 24 hrs</p>
+        </div>
+
+        <div class="card" onclick="selectPackage('10GB','Ksh 120','48 hrs')">
+            <h2>10GB</h2>
+            <p>Fee: Ksh 120 • 48 hrs</p>
+        </div>
+
+        <div class="card highlight" onclick="selectPackage('12.5GB','Ksh 140','48 hrs')">
+            <h2>12.5GB</h2>
+            <p>Fee: Ksh 140 • 48 hrs</p>
+        </div>
+
+        <div class="card" onclick="selectPackage('16GB','Ksh 180','7 days')">
+            <h2>16GB</h2>
+            <p>Fee: Ksh 180 • 7 days</p>
+        </div>
+
+        <div class="card" onclick="selectPackage('21GB','Ksh 200','7 days')">
+            <h2>21GB</h2>
+            <p>Fee: Ksh 200 • 7 days</p>
+        </div>
+
+    </div>
+
+    <button class="cta" onclick="goSelected()">
+        ⚡ Get Selected Package NOW
+    </button>
+
+    <div class="badges">
+        <div><i class="fa-solid fa-lock"></i> Secure</div>
+        <div><i class="fa-solid fa-bolt"></i> Instant</div>
+        <div><i class="fa-solid fa-check"></i> Verified</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

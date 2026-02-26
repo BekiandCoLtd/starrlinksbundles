@@ -1,72 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline';">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <title>Payment Instructions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Instructions</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="payment-container">
-        <!-- Header -->
-        <div class="payment-header">
-            <div class="payment-title">Payment Instructions</div>
-        </div>
 
-        <!-- Package Details -->
-        <div class="package-details-container">
-            <div class="package-title">You've selected:</div>
-            <div class="selected-package" id="selectedPackage"></div>
-        </div>
+<div class="container">
 
-        <!-- Instructions -->
-        <div class="instructions-container">
-            <div class="instructions-title">Please follow these M-Pesa payment instructions:</div>
-            <div class="instructions-list">
-                <ol>
-                    <li>Go to M-Pesa on your phone</li>
-                    <li>Select Lipa na M-Pesa</li>
-                    <li>Select Buy Goods</li>
-                    <li>
-                        Enter Till Number: <span class="till-number">8879872</span>
-                        <button class="copy-btn" onclick="copyTillNumber()">
-                            <i class="fas fa-copy"></i> Copy
-                        </button>
-                    </li>
-                    <li>Enter the amount: <span class="amount" id="amount"></span></li>
-                    <li>Enter your M-Pesa PIN and confirm</li>
-                </ol>
-            </div>
-        </div>
+    <a href="index.html" class="back"><i class="fa fa-arrow-left"></i> Back</a>
 
-        <!-- Confirmation Note -->
-        <div class="confirmation-note">
-            Your package will be activated automatically after payment.
-        </div>
+    <div class="payment-box">
+        <h2 id="packageTitle"></h2>
+
+        <ol>
+            <li>Go to M-Pesa on your phone</li>
+            <li>Select <b>Lipa na M-Pesa</b></li>
+            <li>Select <b>Buy Goods</b></li>
+            <li>Enter Till Number: 
+                <b id="till">8879872</b> 
+                <button onclick="copyTill()">Copy</button>
+            </li>
+            <li>Enter the amount shown for your package</li>
+            <li>Enter your M-Pesa PIN and confirm</li>
+        </ol>
+
+        <p class="note">Your package will be activated automatically after payment.</p>
     </div>
 
-    <script>
-        // Extract package details from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const packageName = urlParams.get('package');
-        const packagePrice = urlParams.get('price');
-        const packageData = urlParams.get('data');
-        const packageDuration = urlParams.get('duration');
+</div>
 
-        // Display package details
-        document.getElementById('selectedPackage').textContent = `${packageData} • Ksh ${packagePrice} • ${packageDuration}`;
-        document.getElementById('amount').textContent = `Ksh ${packagePrice}`;
-
-        // Copy Till Number to clipboard
-        function copyTillNumber() {
-            const tillNumber = document.querySelector('.till-number').textContent;
-            navigator.clipboard.writeText(tillNumber).then(() => {
-                alert('Till Number copied to clipboard!');
-            });
-        }
-    </script>
+<script src="script.js"></script>
 </body>
 </html>

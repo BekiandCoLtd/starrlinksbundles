@@ -1,31 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment</title>
+<title>Payment Instructions</title>
 <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="app">
 
-<a href="index.html" class="back">← Back</a>
+    <!-- Back -->
+    <div class="top-bar">
+        <a href="index.html" class="back-btn">←</a>
+    </div>
 
-<div class="payment-card">
-    <h2 id="pkgTitle"></h2>
+    <!-- Payment Card -->
+    <div class="payment-card">
 
-    <ol>
-        <li>Open M-Pesa</li>
-        <li>Select <b>Lipa na M-Pesa</b></li>
-        <li>Select <b>Buy Goods</b></li>
-        <li>Enter Till Number: <b>8879872</b></li>
-        <li>Enter amount shown</li>
-        <li>Confirm with PIN</li>
-    </ol>
+        <h2 id="pkgTitle" class="pkg-title"></h2>
 
-    <div class="info">Activation is automatic after confirmed payment.</div>
-</div>
+        <div class="divider"></div>
+
+        <div class="steps">
+
+            <div class="step">
+                <span class="number">1</span>
+                <span>Go to <strong>M-Pesa</strong> on your phone</span>
+            </div>
+
+            <div class="step">
+                <span class="number">2</span>
+                <span>Select <strong>Lipa na M-Pesa</strong></span>
+            </div>
+
+            <div class="step">
+                <span class="number">3</span>
+                <span>Select <strong>Buy Goods</strong></span>
+            </div>
+
+            <div class="step">
+                <span class="number">4</span>
+                <div class="till-wrapper">
+                    <span>Enter Till Number</span>
+
+                    <div class="till-box">
+                        <span id="tillNumber">8879872</span>
+                        <button id="copyBtn">Copy</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="number">5</span>
+                <span>Enter the exact package amount</span>
+            </div>
+
+            <div class="step">
+                <span class="number">6</span>
+                <span>Enter your M-Pesa PIN and confirm</span>
+            </div>
+
+        </div>
+
+        <div class="success-note">
+            Your package will activate automatically after confirmed payment.
+        </div>
+
+    </div>
 
 </div>
 

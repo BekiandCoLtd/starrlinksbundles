@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Instructions</title>
+<title>Payment</title>
 <link rel="stylesheet" href="style.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+<div class="app">
 
-    <a href="index.html" class="back"><i class="fa fa-arrow-left"></i> Back</a>
+<a href="index.html" class="back">← Back</a>
 
-    <div class="payment-box">
-        <h2 id="packageTitle"></h2>
+<div class="payment-card">
+    <h2 id="pkgTitle"></h2>
 
-        <ol>
-            <li>Go to M-Pesa on your phone</li>
-            <li>Select <b>Lipa na M-Pesa</b></li>
-            <li>Select <b>Buy Goods</b></li>
-            <li>Enter Till Number: 
-                <b id="till">8879872</b> 
-                <button onclick="copyTill()">Copy</button>
-            </li>
-            <li>Enter the amount shown for your package</li>
-            <li>Enter your M-Pesa PIN and confirm</li>
-        </ol>
+    <ol>
+        <li>Open M-Pesa</li>
+        <li>Select <b>Lipa na M-Pesa</b></li>
+        <li>Select <b>Buy Goods</b></li>
+        <li>Enter Till Number: <b>8879872</b></li>
+        <li>Enter amount shown</li>
+        <li>Confirm with PIN</li>
+    </ol>
 
-        <p class="note">Your package will be activated automatically after payment.</p>
-    </div>
+    <div class="info">Activation is automatic after confirmed payment.</div>
+</div>
 
 </div>
 

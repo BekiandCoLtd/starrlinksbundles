@@ -32,3 +32,27 @@ ctaBtn.addEventListener("click", () => {
 
     window.location.href = "payment.html";
 });
+// Load selected package title
+if (document.getElementById("pkgTitle")) {
+    const pkg = localStorage.getItem("pkg");
+    document.getElementById("pkgTitle").innerText = pkg || "Selected Package";
+}
+
+// Copy to clipboard (smooth)
+const copyBtn = document.getElementById("copyBtn");
+
+if (copyBtn) {
+    copyBtn.addEventListener("click", () => {
+        const till = document.getElementById("tillNumber").innerText;
+
+        navigator.clipboard.writeText(till);
+
+        copyBtn.textContent = "Copied ✓";
+        copyBtn.classList.add("copied");
+
+        setTimeout(() => {
+            copyBtn.textContent = "Copy";
+            copyBtn.classList.remove("copied");
+        }, 2000);
+    });
+}

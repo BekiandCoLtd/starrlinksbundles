@@ -173,3 +173,108 @@ body{
     background: #cbd5e1;
     cursor: not-allowed;
 }
+/* Top bar */
+.top-bar {
+    margin-bottom: 10px;
+}
+
+.back-btn {
+    font-size: 22px;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 600;
+}
+
+/* Payment Card */
+.payment-card {
+    background: white;
+    border-radius: 22px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.pkg-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 12px 0 18px 0;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: #374151;
+}
+
+.number {
+    min-width: 24px;
+    height: 24px;
+    background: #eef2ff;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 13px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Till Box */
+.till-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.till-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3f4f6;
+    padding: 10px 12px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#copyBtn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+#copyBtn:hover {
+    background: #dc2626;
+}
+
+#copyBtn.copied {
+    background: #16a34a;
+}
+
+/* Success Note */
+.success-note {
+    margin-top: 22px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #065f46;
+}

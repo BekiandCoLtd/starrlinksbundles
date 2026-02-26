@@ -16,12 +16,13 @@
         <span class="green">Cell Pro</span>
     </h1>
 
-    <p class="tagline">Secure coverage • Wide coverage • Direct to device</p>
+    <p class="tagline">Secure coverage • wide coverage • Direct to device</p>
 
     <div class="notice">
-        ⚠ Choose your desired package and complete payment to activate instantly.
+        ⚠ Choose your desired package and complete payment to get instant activation.
     </div>
 
+    <!-- Activity -->
     <div class="activity-wrapper">
         <div class="activity-label">Recent Activity (Sample Data)</div>
         <div class="activity-card">
@@ -36,28 +37,87 @@
     <div class="section-title">Select Your Package</div>
 
     <div class="grid">
-        <div class="card" onclick="selectPkg('5GB','Ksh 49','24 hrs')">
+
+        <!-- 24 HOURS -->
+        <div class="card" data-size="5GB" data-price="49" data-duration="24 hrs">
             <h2>5GB</h2>
-            <span>Ksh 49 • 24 hrs</span>
+            <span>Fee: Ksh 49 • 24 hrs</span>
         </div>
 
-        <div class="card featured" onclick="selectPkg('12.5GB','Ksh 140','48 hrs')">
+        <div class="card" data-size="7.5GB" data-price="80" data-duration="24 hrs">
+            <h2>7.5GB</h2>
+            <span>Fee: Ksh 80 • 24 hrs</span>
+        </div>
+
+        <!-- 48 HOURS -->
+        <div class="card" data-size="10GB" data-price="120" data-duration="48 hrs">
+            <h2>10GB</h2>
+            <span>Fee: Ksh 120 • 48 hrs</span>
+        </div>
+
+        <div class="card featured" data-size="12.5GB" data-price="140" data-duration="48 hrs">
             <h2>12.5GB</h2>
-            <span>Ksh 140 • 48 hrs</span>
+            <span>Fee: Ksh 140 • 48 hrs</span>
         </div>
 
-        <div class="card" onclick="selectPkg('21GB','Ksh 200','7 days')">
+        <!-- 7 DAYS -->
+        <div class="card" data-size="16GB" data-price="180" data-duration="7 days">
+            <h2>16GB</h2>
+            <span>Fee: Ksh 180 • 7 days</span>
+        </div>
+
+        <div class="card" data-size="21GB" data-price="200" data-duration="7 days">
             <h2>21GB</h2>
-            <span>Ksh 200 • 7 days</span>
+            <span>Fee: Ksh 200 • 7 days</span>
         </div>
 
-        <div class="card" onclick="selectPkg('50GB','Ksh 960','30 days')">
-            <h2>50GB</h2>
-            <span>Ksh 960 • 30 days</span>
+        <div class="card" data-size="25.5GB" data-price="220" data-duration="7 days">
+            <h2>25.5GB</h2>
+            <span>Fee: Ksh 220 • 7 days</span>
         </div>
+
+        <div class="card" data-size="30GB" data-price="350" data-duration="7 days">
+            <h2>30GB</h2>
+            <span>Fee: Ksh 350 • 7 days</span>
+        </div>
+
+        <!-- 14 DAYS -->
+        <div class="card" data-size="35GB" data-price="420" data-duration="14 days">
+            <h2>35GB</h2>
+            <span>Fee: Ksh 420 • 14 days</span>
+        </div>
+
+        <div class="card" data-size="40GB" data-price="540" data-duration="14 days">
+            <h2>40GB</h2>
+            <span>Fee: Ksh 540 • 14 days</span>
+        </div>
+
+        <!-- 30 DAYS -->
+        <div class="card" data-size="45GB" data-price="680" data-duration="30 days">
+            <h2>45GB</h2>
+            <span>Fee: Ksh 680 • 30 days</span>
+        </div>
+
+        <div class="card" data-size="50GB" data-price="960" data-duration="30 days">
+            <h2>50GB</h2>
+            <span>Fee: Ksh 960 • 30 days</span>
+        </div>
+
+        <div class="card" data-size="60GB" data-price="1550" data-duration="30 days">
+            <h2>60GB</h2>
+            <span>Fee: Ksh 1550 • 30 days</span>
+        </div>
+
+        <div class="card" data-size="70GB" data-price="2000" data-duration="30 days">
+            <h2>70GB</h2>
+            <span>Fee: Ksh 2000 • 30 days</span>
+        </div>
+
     </div>
 
-    <button class="cta" onclick="proceed()">Continue</button>
+    <button id="ctaBtn" class="cta disabled">
+        ⚡ Select a Package
+    </button>
 
     <div class="badges">
         <div>🔒 Secure</div>
